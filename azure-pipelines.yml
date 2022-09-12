@@ -28,13 +28,6 @@ steps:
     publishWebProjects: false
     projects: '**/*.csproj'
     zipAfterPublish: false
-- task: Docker@2
-  inputs:
-    containerRegistry: 'AakashDocker'
-    repository: 'dotnet'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-    addPipelineData: false
-    addBaseImageData: false
+
 
     
