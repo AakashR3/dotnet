@@ -1,5 +1,4 @@
 # Starter pipeline
-
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -29,3 +28,13 @@ steps:
     publishWebProjects: false
     projects: '**/*.csproj'
     zipAfterPublish: false
+- task: Docker@2
+  inputs:
+    containerRegistry: 'AakashDocker'
+    repository: 'dotnet'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    addPipelineData: false
+    addBaseImageData: false
+
+    
